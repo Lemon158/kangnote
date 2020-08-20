@@ -1,1 +1,3 @@
-# kangnote
+# Headline
+
+> An awesome project.
