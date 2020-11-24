@@ -46,7 +46,7 @@ new Thread(ft,"aa").start();
 ft.get();
 ```
  #### 3、代码
-```
+```java
 class MyThreadCallable implements Callable<Integer>{
     @Override
     public Integer call() throws Exception {
@@ -65,6 +65,7 @@ public class ThreadTest03 {
         while (!futureTask.isDone()){
             System.out.println("Please wait....");
         }
+        //获取参数
         System.out.println(futureTask.get());
 //        if (!futureTask.isDone()){
 //            System.out.println("Please wait....");
