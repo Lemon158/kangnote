@@ -1,31 +1,37 @@
 #### 1、与Runnable接口对比
-```
- 创建新类MyThread实现runnable接口
+```java
+ //创建新类MyThread实现runnable接口
 class MyThread implements Runnable{
  @Override
  public void run() {
  
  }
 }
-新类MyThread2实现callable接口
+//新类MyThread2实现callable接口
 class MyThread2 implements Callable<Integer>{
  @Override
  public Integer call() throws Exception {
   return 200;
  } 
 }
- 面试题:callable接口与runnable接口的区别？
+```
+```
+面试题:callable接口与runnable接口的区别？
  
- 答: （1）是否有返回值
+   答: （1）是否有返回值
        （2）是否抛异常
        （3）落地方法(重写方法)不一样，一个是run，一个是call
 
 Runnable是java.lang包
 Callable是java.util.concurrent包(JUC)下的接口
 ```
+
+
+
 #### 2、使用
+
 可知，Thread中的构造方法并没有Callable，所以直接替换Runnable是行不通的。
-```
+```java
 //错误行为
 new Thread(new MyThread2(),"aa");
 ```
@@ -38,7 +44,7 @@ new Thread(new MyThread2(),"aa");
 查看FutureTask构造方法
 ![](https://upload-images.jianshu.io/upload_images/20318144-489a8488f4325ae7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 此时就可以进行使用
-```
+```java
 //实现方式
 FutureTask<Integer> ft = new FutureTask<Integer>(new MyThread2());
 new Thread(ft,"aa").start();
