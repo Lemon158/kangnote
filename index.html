@@ -19,7 +19,7 @@
   <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
   <script>
     window.$docsify = {
-      name: 'docsify-demo',
+      name: 'kangnotes',
       repo: 'https://github.com/Lemon158/kangnotes',
       maxLevel: 5,//最大支持渲染的标题层级
       subMaxLevel: 4,
@@ -43,6 +43,13 @@
 	  plugins: [
         "chapter-fold"
       ],
+	  //字数统计
+	  count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese'
+      }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
